@@ -92,9 +92,6 @@ function Card({
     });
   }
   forChecking(free, features);
-  if (price === 0) {
-    console.log(0);
-  }
   return (
     <div className="flex-container">
       <div className="container">
