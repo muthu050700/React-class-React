@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+:root {
+  --ff: "Inconsolata", monospace;
+
+  --fs-s: 1.2rem;
+  --fs-m: 2.7rem;
+
+  --space: 1.5rem;
+  --card-space: 3rem;
+  --bg-color: blue;
+  --bg-card-color: white;
+  --btn-color: rgb(128, 128, 225);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff);
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.flex-container {
+  padding: var(--space);
+  background-color: var(--bg-color);
+}
+
+.card-details {
+  background-color: var(--bg-card-color);
+  padding: var(--space) var(--card-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  border: none;
+  border-radius: 10px;
+  transition: 1.5s;
+}
+.card-details:hover {
+  transform: scale(1.1);
+}
+.card-details > h5,
+h2 {
+  text-align: center;
+}
+.card-details h5 {
+  color: rgba(83, 90, 96, 0.708);
+}
+.card-details h2 {
+  font-size: var(--fs-m);
+  margin: 0 -30px 0 -20px;
+  padding: 0 0 var(--space) 0;
+  border-bottom: 1px solid rgba(186, 177, 177, 0.374);
+}
+.card-details p,
+i {
+  font-size: var(--fs-s);
+}
+.card-details i {
+  padding-inline: 15px;
+}
+.btn {
+  padding-block: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--btn-color);
+  border-radius: 40px;
+  color: white;
+  transition: 0.5s;
+  font-size: var(--fs-s);
+}
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: rgb(49, 49, 247);
+}
+.fa-check {
+  color: black;
+}
+
+.card-details .fa-xmark,
+.lite {
+  color: rgba(83, 90, 96, 0.804);
+}
