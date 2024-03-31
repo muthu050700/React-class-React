@@ -63,35 +63,69 @@ function Card({
   data6,
   data7,
   data8,
-  check,
-  wrong,
 }) {
-  const features = [
-    "single user",
-    "50GB storage",
-    "unlimited public",
-    "community access",
-    "unlimited private project",
-    "dedicated phone support",
-    "free subdomain",
-    "monthly status reports",
-  ];
-  const free = [
-    "single user",
-    "50GB storage",
-    "unlimited public",
-    "community access",
-  ];
-  function forChecking(data1, data2) {
-    data2.map((value, index) => {
-      if (data1[index] === data2[index]) {
-        console.log(value);
-      } else {
-        console.log("false");
+  function checking(data) {
+    if (cardTitle === "Free") {
+      const features = [
+        "Single User",
+        "50GB Storage",
+        "Unlimited Public",
+        "Community Access",
+      ];
+      function checkingValue() {
+        for (let i = 0; i <= features.length - 1; i++) {
+          if (data === features[i]) {
+            return true;
+          }
+        }
       }
-    });
+      return checkingValue();
+    } else if (cardTitle === "Plus") {
+      const features = [
+        "5 User",
+        "50GB Storage",
+        "Unlimited Public",
+        "Community Access",
+        "Unmimited Private Project",
+        "Dedicated Phone Support",
+        "Free Subdomain",
+      ];
+      function checkingValue() {
+        for (let i = 0; i <= features.length - 1; i++) {
+          if (data === features[i]) {
+            return true;
+          }
+        }
+      }
+      return checkingValue();
+    } else if (cardTitle === "Pro") {
+      const features = [
+        "Unlimted User",
+        "50GB Storage",
+        "Unlimited Public",
+        "Community Access",
+        "Unmimited Private Project",
+        "Dedicated Phone Support",
+        "Free Subdomain",
+        "Monthly Status Reports",
+      ];
+      function checkingValue() {
+        for (let i = 0; i <= features.length - 1; i++) {
+          if (data === features[i]) {
+            return true;
+          }
+        }
+      }
+      return checkingValue();
+    }
   }
-  forChecking(free, features);
+  function checkingTheValue(data, value) {
+    if (data === true) {
+      return `✔️ ${value}`;
+    } else {
+      return <span className="lite">{`❌ ${value}`}</span>;
+    }
+  }
   return (
     <div className="flex-container">
       <div className="container">
@@ -100,37 +134,15 @@ function Card({
             <h5>{cardTitle}</h5>
             <h2>${price}/month</h2>
             <p>
-              <i class={check}></i>
-              {data1}
+              <span>{checkingTheValue(checking(data1), data1)}</span>
             </p>
-            <p>
-              <i class={check}></i>
-              {data2}
-            </p>
-            <p>
-              <i class={check}></i>
-              {data3}
-            </p>
-            <p>
-              <i class={check}></i>
-              {data4}
-            </p>
-            <p className="lite">
-              <i class={wrong}></i>
-              {data5}
-            </p>
-            <p className="lite">
-              <i class={wrong}></i>
-              {data6}
-            </p>
-            <p className="lite">
-              <i class={wrong}></i>
-              {data7}
-            </p>
-            <p className="lite">
-              <i class={wrong}></i>
-              {data8}
-            </p>
+            <p>{checkingTheValue(checking(data2), data2)}</p>
+            <p>{checkingTheValue(checking(data3), data3)}</p>
+            <p>{checkingTheValue(checking(data4), data4)}</p>
+            <p>{checkingTheValue(checking(data5), data5)}</p>
+            <p>{checkingTheValue(checking(data6), data6)}</p>
+            <p>{checkingTheValue(checking(data7), data7)}</p>
+            <p>{checkingTheValue(checking(data8), data8)}</p>
             <button className="btn">button</button>
           </div>
         </div>
